@@ -77,7 +77,7 @@ function App(): React.JSX.Element {
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
           <Section title="Title Text">
-            Edit <Text style={styles.highlight}>Adin Shobirin</Text> to awikwok amat this
+            Edit <Text style={styles.highlight}>Adin Shobirin</Text> to this
             screen and then come back to see your edits.
           </Section>
           <Section title="See Your Changes">
