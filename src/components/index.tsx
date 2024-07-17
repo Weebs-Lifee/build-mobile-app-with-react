@@ -1,3 +1,5 @@
 import BottomNavigator from "./BottomNavigator";
+import Saldo from "./Saldo";
+import ButtonIcon from "./ButtonIcon";
 
-export {BottomNavigator}
+export {BottomNavigator, Saldo, ButtonIcon}

@@ -1,31 +1,44 @@
 // @ts-nocheck
-import { StyleSheet, Text, TouchableOpacity } from 'react-native'
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { IconAccount, IconAccountActive, IconHome, IconHomeActive, IconOrder, IconOrderActive } from '../../assets'
+import {disable_color, primary_color} from '../../utils/constant'
 
-const TabItem = ({isFocused, onPress, onLongPress, label }) => {
+const TabItem = ({isFocused, onPress, onLongPress, label}:any) => {
+
   const Icon = () => {
-    // if (label === 'Home') return isFocused ? <IconHomeActive /> : <IconHome />
-    // if (label === 'Order') return isFocused ? <IconOrderActive /> : <IconOrder />
-    // if (label === 'Account') return isFocused ? <IconAccountActive /> : <IconAccount />
+    if (label === 'Home') return isFocused ? <Image source={IconHomeActive} /> : <Image source={IconHome} /> 
+    if (label === 'Order') return isFocused ? <Image source={IconOrderActive} /> :  <Image source={IconOrder} /> 
+    if (label === 'Account') return isFocused ?  <Image source={IconAccountActive} /> :  <Image source={IconAccount} /> 
 
-    return (
-      <Text>Udin</Text>
-    )
+    return <IconHome />
 
   }
+ 
   return (
-    
     <TouchableOpacity
       onPress={onPress}
       onLongPress={onLongPress}
-      style={{ flex: 1 }}
+      style={styles.container}
     >
-      <Text style={{ color: isFocused ? '#673ab7' : '#222' }}>{label}</Text>
+      <View style={styles.container}>
+      <Icon />
+      </View>
+      {/* <Image source={IconAccount} /> */}
+      <Text style={styles.text(isFocused)}>{label}</Text>
     </TouchableOpacity>
   )
 }
 
 export default TabItem
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container: {
+    alignItems: 'center',
+  },
+  text: (isFocused) => ({
+    fontSize: 13,
+    color: isFocused ? primary_color: disable_color,
+    marginTop: 8,
+  })
+})
