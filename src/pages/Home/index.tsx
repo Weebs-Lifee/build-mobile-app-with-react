@@ -27,6 +27,9 @@ const Home = () => {
           <ButtonIcon title="Ekspress" type ="layanan"  />
         </View>
       </View>
+      <View>
+        <Text style={styles.label}>Pesanan Aktif</Text>
+      </View>
     </View>
   )
 }
